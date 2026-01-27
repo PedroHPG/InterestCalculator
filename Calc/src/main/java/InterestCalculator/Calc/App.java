@@ -37,5 +37,6 @@ public class App
         }
         
         //Close program
+        System.out.printf("Your interest is R$%.2f%n. In other words, the total value is R$%.2f%n.", interest, (interest + startingAmount));
     }
 }
