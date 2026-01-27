@@ -1,26 +1,42 @@
 package InterestCalculator.Calc;
 
+import java.util.Scanner;
 
 public class App 
 {
     public static void main( String[] args )
     {
     	//Initialize scanner
+    	Scanner scan = new Scanner(System.in);
     	
     	//Take input on operation type
-        System.out.println( "Enter the desired operation (s for simple interest, c for compound interest, anything else to end): " );
+        System.out.println("Enter the desired operation (s for simple interest, c for compound interest, anything else to end): ");
+        String operationType = scan.nextLine();
         
         //Take input on interest rate
+        System.out.println("Enter the interest rate (as a % number): ");
+        float rate = scan.nextFloat();
         
         //Take input on starting amount
+        System.out.println("Enter the starting amount: ");
+        float startingAmount = scan.nextFloat();
         
         //Take input on time
+        System.out.println("Enter the elapsed time (in the same unit as the rate): ");
+        int time = scan.nextInt();
         
+        float result = 0;
         //Calculate simple interest
+        if(operationType == "s") {
+        	
+        }
         
         //Calculate compound interest
+        if(operationType == "c") {
+        	
+        }
         
-        //Return calculated value and ask for further operations
+        //Close program
         
     }
 }
