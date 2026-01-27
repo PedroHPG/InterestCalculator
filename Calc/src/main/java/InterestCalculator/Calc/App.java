@@ -25,7 +25,7 @@ public class App
         System.out.println("Enter the elapsed time (in the same unit as the rate): ");
         int time = scan.nextInt();
         
-        float interest = 0;
+        double interest = 0;
         //Calculate simple interest
         if(operationType == "s") {
         	interest = startingAmount * time * (rate/100);
@@ -33,10 +33,9 @@ public class App
         
         //Calculate compound interest
         if(operationType == "c") {
-        	
+        	interest = startingAmount * Math.pow((1 + rate), time) - startingAmount;
         }
         
         //Close program
-        
     }
 }
