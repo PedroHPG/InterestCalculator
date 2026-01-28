@@ -26,14 +26,15 @@ public class App
         int time = scan.nextInt();
         
         double interest = 0;
-        //Calculate simple interest
-        if(operationType == "s") {
-        	interest = startingAmount * time * (rate/100);
-        }
-        
-        //Calculate compound interest
-        if(operationType == "c") {
-        	interest = startingAmount * Math.pow((1 + rate), time) - startingAmount;
+        switch(operationType) {
+	        case "s":
+	        	interest = startingAmount * time * (rate/100);
+	        	break;
+	        case "c":
+	        	interest = startingAmount * Math.pow((1 + rate), time) - startingAmount;
+	        	break;
+	        default:
+	        	System.out.println("Invalid operation type");
         }
         
         //Close program
