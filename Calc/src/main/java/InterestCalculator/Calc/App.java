@@ -13,15 +13,13 @@ public class App
         System.out.println("Enter the desired operation (s for simple interest, c for compound interest, anything else to end): ");
         String operationType = scan.nextLine();
         
-        //Take input on interest rate
+        //Take input on interest rate, starting amount and time
         System.out.println("Enter the interest rate (as a % number): ");
         float rate = scan.nextFloat();
         
-        //Take input on starting amount
         System.out.println("Enter the starting amount: ");
         float startingAmount = scan.nextFloat();
         
-        //Take input on time
         System.out.println("Enter the elapsed time (in the same unit as the rate): ");
         int time = scan.nextInt();
         
