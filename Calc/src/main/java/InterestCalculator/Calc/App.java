@@ -11,7 +11,12 @@ public class App
     	
     	//Take input on operation type
         System.out.println("Enter the desired operation (s for simple interest, c for compound interest, anything else to end): ");
-        String operationType = scan.nextLine();
+        char operationType = scan.nextLine().charAt(0);
+        if(operationType != 's' && operationType != 'c') {
+        	System.out.println("No operation type chosen. Stopping program.");
+            scan.close();
+        	System.exit(0);
+        }
         
         //Take input on interest rate, starting amount and time
         System.out.println("Enter the interest rate (as a % number): ");
@@ -25,10 +30,10 @@ public class App
         
         double interest = 0;
         switch(operationType) {
-	        case "s":
+	        case 's':
 	        	interest = startingAmount * time * (rate/100);
 	        	break;
-	        case "c":
+	        case 'c':
 	        	interest = startingAmount * Math.pow((1 + rate), time) - startingAmount;
 	        	break;
 	        default:
@@ -36,6 +41,7 @@ public class App
         }
         
         //Close program
+        scan.close();
         System.out.printf("Your interest is R$%.2f%n. In other words, the total value is R$%.2f%n.", interest, (interest + startingAmount));
     }
 }
