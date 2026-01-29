@@ -28,7 +28,15 @@ public class App
         System.out.println("Enter the elapsed time (in the same unit as the rate): ");
         int time = scan.nextInt();
         
-        double interest = 0;
+        double interest = interestCalculation(operationType, rate, startingAmount, time);
+        
+        //Close program
+        scan.close();
+        System.out.printf("Your interest is R$%.2f%n. In other words, the total value is R$%.2f%n.", interest, (interest + startingAmount));
+    }
+    
+    public static double interestCalculation(char operationType, float rate, float startingAmount, int time) {
+    	double interest = 0;
         switch(operationType) {
 	        case 's':
 	        	interest = startingAmount * time * (rate/100);
@@ -39,9 +47,6 @@ public class App
 	        default:
 	        	System.out.println("Invalid operation type");
         }
-        
-        //Close program
-        scan.close();
-        System.out.printf("Your interest is R$%.2f%n. In other words, the total value is R$%.2f%n.", interest, (interest + startingAmount));
+        return interest;
     }
 }
