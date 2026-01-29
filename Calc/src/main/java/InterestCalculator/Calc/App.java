@@ -42,7 +42,7 @@ public class App
 	        	interest = startingAmount * time * (rate/100);
 	        	break;
 	        case 'c':
-	        	interest = startingAmount * Math.pow((1 + rate), time) - startingAmount;
+	        	interest = startingAmount * Math.pow((1 + rate/100), time) - startingAmount;
 	        	break;
 	        default:
 	        	System.out.println("Invalid operation type");
