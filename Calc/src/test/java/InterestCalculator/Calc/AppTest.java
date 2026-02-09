@@ -10,11 +10,11 @@ public class AppTest
 {
     @Test
     public void testSimpleInterestCalculation() {
-    	assertEquals(App.interestCalculation('s', 10, 100, 10), 100.00);
+    	assertEquals(100.00, App.interestCalculation('s', 10, 100, 10), 0.005);
     }
     
     @Test
     public void testCompoundInterestCalculation() {
-    	assertEquals(App.interestCalculation('c', 10, 100, 10), 159.37);
+    	assertEquals(159.37, App.interestCalculation('c', 10, 100, 10), 0.005);
     }
 }
